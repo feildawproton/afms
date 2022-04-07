@@ -109,6 +109,20 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 ![image](https://user-images.githubusercontent.com/56926839/162321304-ce46f053-278d-4833-ae4a-41c811bf5e0b.png)
 ![image](https://user-images.githubusercontent.com/56926839/162321388-4f4e6a7d-dc32-4e7a-82f6-29c27949c49e.png)
 
+## Implementation
+
+![image](https://user-images.githubusercontent.com/56926839/162324187-4cb14f12-a85c-43da-a00d-b1c150a2f202.png)
+![image](https://user-images.githubusercontent.com/56926839/162324255-634dd4dd-f711-4af8-9aca-9e5e97476439.png)
+
+## Demonstration
+- 11 participants, 14+ recordings per movement
+- 80% of data used for training
+- Testing accuracy >75% achievable (as good a human)
+- However, accuracy suffers under domain shift.  Problem is overfit with so few examples.
+- Written in C++ and compiled with VS
+
+
+
 
 
 
