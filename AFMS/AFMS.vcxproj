@@ -125,19 +125,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DictionaryFunctions.cpp" />
+    <ClCompile Include="DictionaryOperations.cpp" />
+    <ClCompile Include="DictionaryProducers.cpp" />
     <ClCompile Include="FileFunctions.cpp" />
     <ClCompile Include="FileProducers.cpp" />
     <ClCompile Include="FormatFunctions.cpp" />
     <ClCompile Include="FormatProducers.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NodeFunctions.cpp" />
     <ClCompile Include="TiffOperations.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DictionaryFunctions.h" />
+    <ClInclude Include="DictionaryOperations.h" />
+    <ClInclude Include="DictionaryProducers.h" />
     <ClInclude Include="FileFunctions.h" />
     <ClInclude Include="FileProducers.h" />
     <ClInclude Include="FormatFunctions.h" />
     <ClInclude Include="FormatProducers.h" />
+    <ClInclude Include="NodeDescriptions.h" />
+    <ClInclude Include="NodeFunctions.h" />
     <ClInclude Include="TiffOperations.h" />
   </ItemGroup>
   <ItemGroup>
