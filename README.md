@@ -60,6 +60,26 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 
 ![image](https://user-images.githubusercontent.com/56926839/162318529-8664f53b-3daa-4b64-9f4b-fe108180252f.png)
 
+## Particular Application: Functional Movement Screening
+- Multiple subclasses per movement
+  - 12 individual movements
+  - 48 total class categories
+  - 104 total labels
+- Depth video data
+
+![image](https://user-images.githubusercontent.com/56926839/162320719-73dcd101-1500-4d8b-8f9f-665e7165bdb8.png)
+![image](https://user-images.githubusercontent.com/56926839/162320771-5e815c33-541d-44b6-bb56-70c8a4ab5fa3.png)
+
+## Chosen Architecture
+- Convolution layer is a 4D hypercube
+- The dimension CNNw corresponds to the vector of features
+- We want activations have a binary distribution:
+![image](https://user-images.githubusercontent.com/56926839/162321215-79d64502-5ecc-4dc7-9460-06a8dddeaf87.png)
+![image](https://user-images.githubusercontent.com/56926839/162321304-ce46f053-278d-4833-ae4a-41c811bf5e0b.png)
+![image](https://user-images.githubusercontent.com/56926839/162321388-4f4e6a7d-dc32-4e7a-82f6-29c27949c49e.png)
+
+
+
 
 
 
