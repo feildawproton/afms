@@ -36,17 +36,6 @@ NUM_EPOCHS_PER_DECAY = 350.0      # Epochs after which learning rate decays.
 LEARNING_RATE_DECAY_FACTOR = 0.1  # Learning rate decay factor.
 INITIAL_LEARNING_RATE = 0.1      # Initial learning rate.
 
-#the first kernal in the exampe for images is = [f height = 5, f width = 5, in channels = 3, out channels = 64]
-# the first pooling kernal in the image example is = [window batch = 1, f height = 3, f width = 3, channels = 1]
-# the first pooling stride in the image example is = [window batch = 1, f height = 2, f width = 2, channels = 1]
-#the second kernal in the exampe for images is = [f height = 5, f width = 5, in channels = 64, out channels = 64]
-# the second pooling kernal in the image example is = [window batch = 1, f height = 3, f width = 3, channels = 1]
-# the second pooling stride in the image example is = [window batch = 1, f height = 2, f width = 2, channels = 1]
-
-#filter kernal for conv3d needs to be [f depth, f height, f width, in channels, out channels]
-#the kernal for pooling is = [window batch, window depth, window height, window width, window channels] 
-#the stride for pooling is = [window batch, window depth, window height, window width, window channels] 
-
 first_fkernal = [2, 6, 6, 1, 32]  #basically three times the example but i don't know how channels affects whatever
 first_pkernal = [1, 3, 3, 3, 1]  #uh not sue
 first_pstride = [1, 2, 2, 2, 1]
@@ -57,17 +46,12 @@ second_pstride = [1, 2, 2, 2, 1]
 
 TOWER_NAME = 'tower'
 
-#THIS FUNCTION IS JUST A MILD INDIRECTION! CONSIDER REMOVING IT
 def distorted_inputs():
     if not FLAGS.data_dir:
         raise ValueError("missing data dir or whatever")
     data_dir = FLAGS.data_dir #this should be fine
     videos, labels = AFMS_input.distorted_inputs(data_dir, batch_size = FLAGS.batch_size)
 
-    #i'm not even going to check for this because I don't have a lot of fp16 capability on my gaming graphics card
-    #if FLAGS.use_fp16:
-    #   images = tf.cast(images, tf.float16)
-    #   labels = tf.cast(labels, tf.float16)
     return videos, labels;
 
 
