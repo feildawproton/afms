@@ -3,8 +3,6 @@ An old (2016) project.  Part of it for school (msim 751) and part for work (afms
 
 The description below applies to the cpp project.  I also tried a 4D concolutional NN using tensorflow.
 
-gritn_SCandSVM 
-
 # Bayesian Data Analysis - Multipatameter Models
 # Topic: Deep Belief Networks for Video Classification
 2016 Nov 28
