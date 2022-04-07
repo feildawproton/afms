@@ -118,7 +118,7 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 - 11 participants, 14+ recordings per movement
 - 80% of data used for training
 - Testing accuracy >75% achievable (as good a human)
-- However, accuracy suffers under domain shift.  Problem is overfit with so few examples.
+- However, accuracy suffers under domain shift.  Problem is overfit and model is biased with so few examples.
 - Written in C++ and compiled with VS
 
 
