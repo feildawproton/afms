@@ -13,7 +13,7 @@ The description below applies to the cpp project.  I also tried a 4D concolution
   - Once trained, these layers and their weight matrices will form our probabilistic model
 ![image](https://user-images.githubusercontent.com/56926839/162315889-33237a0b-1346-4002-80cb-f209a866ced4.png)
 
-## Restricted Boltzmann Machine
+## Restricted Boltzmann Machine Training: Contrastive Divergence (single step)
 - Visible Units are inputs
 - Hidden Units are activated by the visible units via a weight matrix W with
 ![image](https://user-images.githubusercontent.com/56926839/162316330-224db8f8-418f-478a-a035-8c6a8ec7de30.png)
@@ -74,6 +74,7 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 - Convolution layer is a 4D hypercube
 - The dimension CNNw corresponds to the vector of features
 - We want activations have a binary distribution:
+
 ![image](https://user-images.githubusercontent.com/56926839/162321215-79d64502-5ecc-4dc7-9460-06a8dddeaf87.png)
 ![image](https://user-images.githubusercontent.com/56926839/162321304-ce46f053-278d-4833-ae4a-41c811bf5e0b.png)
 ![image](https://user-images.githubusercontent.com/56926839/162321388-4f4e6a7d-dc32-4e7a-82f6-29c27949c49e.png)
