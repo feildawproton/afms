@@ -52,7 +52,8 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 ![image](https://user-images.githubusercontent.com/56926839/162318159-f0b6207c-463f-43aa-a02a-0dc3211f9a4c.png)
 
 9) Update a and b
-![image](https://user-images.githubusercontent.com/56926839/162317476-0e3960ed-7e35-41c2-a746-d01eabf979ed.png)
+![image](https://user-images.githubusercontent.com/56926839/162318529-8664f53b-3daa-4b64-9f4b-fe108180252f.png)
+
 
 
 
