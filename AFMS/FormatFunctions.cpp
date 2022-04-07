@@ -10,6 +10,36 @@ namespace Format_System
 {
 #pragma region not declared in interface
 
+	//arma::umat grayTiffToMat_Resized(const std::string& name, unsigned nRows, unsigned nCols)
+	//{
+	//	std::vector<std::array<unsigned char, 4>> raster;
+	//	unsigned iCols; //width 
+	//	unsigned iRows; //height
+
+	//	TSys::tiff_toUint8Vec(name, raster, iCols, iRows);
+
+	//	double rowRatio = ((double)iRows) / ((double)nRows);
+	//	double colRatio = ((double)iCols) / ((double)nCols);
+
+	//	arma::umat mat(nRows, nCols);
+
+	//	for (int r = 0; r < nRows; r++)
+	//	{
+	//		for (int c = 0; c < nCols; c++)
+	//		{
+	//			unsigned rowP = (unsigned)round(r*rowRatio);
+	//			unsigned colP = (unsigned)round(c*colRatio);
+	//			
+	//			unsigned rawPosition = rowP*iCols + colP; //this is fun
+
+	//			//uh more conversions
+	//			std::array<unsigned char, 4> datum = raster[rawPosition];
+	//			mat(r, c) = datum[1]; //[1] and [2] should be both safe to use on a gray scale image (R=G=B) regardless of endianness of RGBA
+	//		}
+	//	}
+
+	//	return mat;
+	//}
 	arma::umat grayTiffToMat_ResizedAVG(const std::string& name, unsigned nRows, unsigned nCols)
 	{
 		std::vector<std::array<unsigned char, 4>> raster;
@@ -35,10 +65,10 @@ namespace Format_System
 				unsigned colPnext = (unsigned)round((c+1)*colRatio);
 				
 				//check to make sure not out of bounds
-				if ((rowPnext*iCols + colPnext) > raster.size())
+				if (rowPnext*colPnext > raster.size())
 				{
 					//kind of an inelegant edge added to the image?
-					unsigned rawPosition1 = rowP*iCols + colP;  //ROW MAJOR
+					unsigned rawPosition1 = rowP*iCols + colP;
 					std::array<unsigned char, 4> datum = raster[rawPosition1];
 					mat(r, c) = datum[1]; //[1] and [2] should be both safe to use on a gray scale image (R=G=B) regardless of endianness of RGBA
 				}
@@ -70,29 +100,17 @@ namespace Format_System
 	}
 	arma::ucube sliceReshape_viaSample(const arma::ucube& baseCube, unsigned nSlices)
 	{
-		if (nSlices > baseCube.n_slices)
+		double sliceRatio = ((double)baseCube.n_slices) / ((double)nSlices);
+
+		arma::ucube newCube(baseCube.n_rows, baseCube.n_cols, nSlices);
+
+		//nexted loops...
+		for (unsigned k = 0; k < nSlices; k++)
 		{
-			std::cout << "\nProblem in sliceReshape_viaSample" << std::endl;
-
-			double sliceRatio = ((double)baseCube.n_slices) / ((double)nSlices);
-
-			return baseCube;
+			unsigned kay = (unsigned)round(k*sliceRatio);
+			newCube.slice(k) = baseCube.slice(kay);
 		}
-		else
-		{
-			double sliceRatio = ((double)baseCube.n_slices) / ((double)nSlices);
-
-			arma::ucube newCube(baseCube.n_rows, baseCube.n_cols, nSlices);
-
-			//nexted loops...
-			for (unsigned k = 0; k < nSlices; k++)
-			{
-				unsigned kay = (unsigned)round(k*sliceRatio);
-				newCube.slice(k) = baseCube.slice(kay);
-			}
-			return newCube;
-		}
-		
+		return newCube;
 	}
 #pragma endregion
 

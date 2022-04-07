@@ -35,18 +35,18 @@ namespace Format_System
 			if (i < (numTraining / 2))
 			{
 				arma::ucube eye = FormS::convert_tiffFolder_toCube(rawDataFolder_PathNames[i], nRows, nCols, nSlices);
-				eye.save(trainData_PathNames[i], arma::arma_ascii);
+				eye.save(trainData_PathNames[i], arma::arma_ascii);  //ascii for the ease
 
 				arma::ucube jay = FormS::convert_tiffFolder_toCube(rawDataFolder_PathNames[j], nRows, nCols, nSlices);
-				jay.save(trainData_PathNames[j], arma::arma_ascii);
+				jay.save(trainData_PathNames[j], arma::arma_ascii);  //ascii for the ease
 			}
 			else
 			{
 				arma::ucube eye = FormS::convert_tiffFolder_toCube(rawDataFolder_PathNames[i], nRows, nCols, nSlices);
-				eye.save(testData_PathNames[i], arma::arma_ascii);
+				eye.save(testData_PathNames[i], arma::arma_ascii);  //ascii for the ease
 
 				arma::ucube jay = FormS::convert_tiffFolder_toCube(rawDataFolder_PathNames[j], nRows, nCols, nSlices);
-				jay.save(testData_PathNames[j], arma::arma_ascii);
+				jay.save(testData_PathNames[j], arma::arma_ascii);  //ascii for the ease
 			}
 		}
 		//need another loop to complete 
