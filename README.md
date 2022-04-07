@@ -37,21 +37,27 @@ The description below applies to the cpp project.  I also tried a 4D concolution
   - Compute the probabilities h
   - Sample h
     - In the architecture I use the sample of h is purposefully selected
+   
 ![image](https://user-images.githubusercontent.com/56926839/162317754-4989fad0-2d62-4c9c-a243-0a9b8512836a.png)
 
 2) Compute Positive Gradient
+
 ![image](https://user-images.githubusercontent.com/56926839/162317890-f9a054f8-f221-48e8-b432-e3fd29c243d5.png)
 
 3) From h reconstruct v’, then resample h’
+
 ![image](https://user-images.githubusercontent.com/56926839/162317989-ad62738f-8d54-4437-96af-54439a409bfa.png)
 
 4) Compute Negative Gradient
+
 ![image](https://user-images.githubusercontent.com/56926839/162318102-487852e0-8b50-4e3e-9313-6ed51e31ac8f.png)
 
 5) Update W by ΔW where ϵ is the step size
+
 ![image](https://user-images.githubusercontent.com/56926839/162318159-f0b6207c-463f-43aa-a02a-0dc3211f9a4c.png)
 
 6) Update a and b
+
 ![image](https://user-images.githubusercontent.com/56926839/162318529-8664f53b-3daa-4b64-9f4b-fe108180252f.png)
 
 
