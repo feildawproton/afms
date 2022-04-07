@@ -70,6 +70,36 @@ The description below applies to the cpp project.  I also tried a 4D concolution
 ![image](https://user-images.githubusercontent.com/56926839/162320719-73dcd101-1500-4d8b-8f9f-665e7165bdb8.png)
 ![image](https://user-images.githubusercontent.com/56926839/162320771-5e815c33-541d-44b6-bb56-70c8a4ab5fa3.png)
 
+## Chosen Approach
+- The input layer is a 3D cube of sized video data
+- The convolution layer (from CNNs) helps with translation invariance 
+- The first hidden layer is activated by patterns in the convolution layer
+- The second RBM uses the first as input
+- The output layer is visible and shows classification probabilities
+  - The output layer is trained like a RBM but with labels for and control over which nodes are 
+  
+![image](https://user-images.githubusercontent.com/56926839/162323684-fb5d5291-dbfb-428c-b09a-5c0e3e504628.png)
+
+## Feature Dictionary Initialization
+- Type Dictionaries are initialized from 3D patches sampled across all recordings of the single movement type
+- Patch vectors are normalized
+
+![image](https://user-images.githubusercontent.com/56926839/162323771-5c889fd8-cd9c-435d-928e-adca5bf91c73.png)
+
+## Feature Dictionary Initialization
+- Activations are calculated by projecting the Initial Dictionary onto the Training Data subject to a Soft Threshold Constraint
+
+![image](https://user-images.githubusercontent.com/56926839/162323913-7f23ac9a-4f56-4ed0-b5de-1732133e2aeb.png)
+
+- The alpha is the threshold constraint
+- Note that in this Representation activations keep their relative position
+  - This could be used for classification by spatial and temporal relationships
+
+![image](https://user-images.githubusercontent.com/56926839/162323947-393f2219-a6ab-4435-8abf-b03d621f35da.png)
+
+![image](https://user-images.githubusercontent.com/56926839/162323991-2eff75c5-9d12-4137-a0ba-08db3718e633.png)
+
+
 ## Chosen Architecture
 - Convolution layer is a 4D hypercube
 - The dimension CNNw corresponds to the vector of features
