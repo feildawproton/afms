@@ -1,5 +1,5 @@
 # afms
-An old (2016) project.  Part of it for school (msim 751) and part for work (afms python code).
+An old (2016) project.  Part of it for school (msim 751) and part for a particular application.
 
 The description below applies to the cpp project.  I also tried a 4D concolutional NN using tensorflow.
 
